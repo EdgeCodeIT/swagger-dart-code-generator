@@ -385,6 +385,14 @@ $allMethodsContent
     }
 
     parameterName = parameterName.replaceAll(',', '');
+    
+    parameterName = parameterName.replaceAll("[", "_");
+    parameterName = parameterName.replaceAll("]", "");
+    
+    if (parameterName.startsWith('_') || parameterName.startsWith('-')) {
+      parameterName = parameterName.replaceRange(0, 1, '\$');
+    }
+    
 
     var name = <String>[];
     exceptionWords.forEach((String element) {
