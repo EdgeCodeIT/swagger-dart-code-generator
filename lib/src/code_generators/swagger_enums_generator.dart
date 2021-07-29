@@ -248,7 +248,7 @@ $enumMap
     }
 
     var result = name
-        .replaceAll(RegExp(r'[^\w|\_|)]'), '_')
+        .replaceAll(RegExp(r'[^\w|\_|)\[\]]'), '_')
         .split('_')
         .where((element) => element.isNotEmpty)
         .map((String word) => word.toLowerCase().capitalize)
