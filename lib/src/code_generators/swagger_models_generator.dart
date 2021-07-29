@@ -215,6 +215,8 @@ abstract class SwaggerModelsGenerator {
     if (isEnum) {
       className = className.substring(6);
     }
+    
+    className = className.replaceAll("[","_").replaceAll("]","")
 
     final result = className.pascalCase
         .split(RegExp('-|}|{'))
